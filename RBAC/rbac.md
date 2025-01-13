@@ -20,6 +20,7 @@ metadata:
   name: jenkins-role
   namespace: webapps
 rules:
+  # Permissions for core API resources
   - apiGroups: [""]
     resources:
       - secrets
@@ -28,14 +29,24 @@ rules:
       - services
       - pods
     verbs: ["get", "list", "watch", "create", "update", "delete"]
+
+  # Permissions for apps API group
   - apiGroups: ["apps"]
     resources:
       - deployments
       - replicasets
     verbs: ["get", "list", "watch", "create", "update", "delete"]
+
+  # Permissions for networking API group
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
+    verbs: ["get", "list", "watch", "create", "update", "delete"]
+
+  # Permissions for autoscaling API group
+  - apiGroups: ["autoscaling"]
+    resources:
+      - horizontalpodautoscalers
     verbs: ["get", "list", "watch", "create", "update", "delete"]
 ```
 
