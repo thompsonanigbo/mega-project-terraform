@@ -28,26 +28,26 @@ rules:
       - persistentvolumeclaims
       - services
       - pods
-    verbs: ["get", "list", "watch", "create", "update", "delete"]
+    verbs: ["get", "list", "watch", "create", "update", "delete","patch"]
 
   # Permissions for apps API group
   - apiGroups: ["apps"]
     resources:
       - deployments
       - replicasets
-    verbs: ["get", "list", "watch", "create", "update", "delete"]
+    verbs: ["get", "list", "watch", "create", "update", "delete","patch"]
 
   # Permissions for networking API group
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
-    verbs: ["get", "list", "watch", "create", "update", "delete"]
+    verbs: ["get", "list", "watch", "create", "update", "delete","patch"]
 
   # Permissions for autoscaling API group
   - apiGroups: ["autoscaling"]
     resources:
       - horizontalpodautoscalers
-    verbs: ["get", "list", "watch", "create", "update", "delete"]
+    verbs: ["get", "list", "watch", "create", "update", "delete","patch"]
 ```
 
 
